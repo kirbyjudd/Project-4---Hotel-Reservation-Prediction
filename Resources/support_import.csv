@@ -1,0 +1,3 @@
+﻿hotel_id,hotel,intl_id,international,room_type_fulfilled_id,room_type_fulfilled,is_canceled_id,is_canceled
+0,City,0,Yes,0,Yes,0,No
+1,Resort,1,No,1,No,1,Yes

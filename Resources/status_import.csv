@@ -1,0 +1,4 @@
+﻿deposit_id,deposit_type,r_status_id,reservation_status
+0,No Deposit,0,Canceled
+1,Non Refund,1,Check-Out
+2,Refundable,2,No-Show

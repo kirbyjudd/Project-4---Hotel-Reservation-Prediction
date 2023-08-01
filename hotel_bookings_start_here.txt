@@ -1,0 +1,128 @@
+--Directions to setup hotel_bookings_db
+--1. Create a new database using pgAdmin named: hotel_bookings_db
+--2. Open a new query window. Copy and paste the entire contents of this file into
+--   the window. Run Execute.
+--3. Navigate to hotel_bookings_db>Schemas>public>Tables. Right click on Tables and
+--   select refresh.
+--4. Right click on the country table and select Import/Export Data. 
+--   Select Import. Set the path to the file to country_import.csv. Change format to csv.
+--   Click on Options in the Import/Export menu.
+--   Ensure Header is set to on. Scroll down to NULL Strings and to the value to: NULL
+--   Select Ok to import the file.
+--5. Repeat step 4 for the following tables/csv files:
+--   customer/customer_import.csv
+--   misc/misc_import.csv
+--   market/market_import.csv
+--   rooms/rooms_import.csv
+--   status/status_import.csv
+--   support/support_import.csv
+--   hotel_bookings/hotel_bookings_import.csv
+--6. Open a new query window and execute the following code:
+--   ALTER TABLE hotel_bookings
+--   DROP COLUMN company;
+--7. Perform a select statement on each table to validate imports.
+
+
+--Schema for hotel_bookings table and support and lookup tables to support the csv imports
+
+-- Drop tables if exists
+DROP TABLE IF EXISTS country;
+DROP TABLE IF EXISTS misc;
+DROP TABLE IF EXISTS rooms;
+DROP TABLE IF EXISTS market;
+DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS status;
+DROP TABLE IF EXISTS support;
+DROP TABLE IF EXISTS hotel_bookings;
+
+
+--CREATE TABLE support
+CREATE TABLE support (
+  hotel_id INTEGER UNIQUE NOT NULL,
+  hotel VARCHAR(30) UNIQUE NOT NULL,
+  intl_id INTEGER UNIQUE NOT NULL,
+  international VARCHAR(3) UNIQUE NOT NULL,	
+  room_type_fulfilled_id INTEGER UNIQUE NOT NULL,
+  room_type_fulfilled VARCHAR(3) UNIQUE NOT NULL,
+  is_canceled_id INTEGER UNIQUE NOT NULL,
+  is_canceled VARCHAR(3) UNIQUE NOT NULL
+);
+
+--CREATE TABLE status
+CREATE TABLE status (
+  deposit_id INTEGER UNIQUE NOT NULL,
+  deposit_type VARCHAR(20) NOT NULL,
+  r_status_id INTEGER UNIQUE NOT NULL,
+  reservation_status VARCHAR(20) NOT NULL
+);
+
+--CREATE TABLE customer
+CREATE TABLE customer (
+  cust_type_id INTEGER UNIQUE NOT NULL,
+  customer_type VARCHAR(20) NOT NULL
+);
+
+--CREATE TABLE misc
+CREATE TABLE misc (
+  meal_id INTEGER UNIQUE NOT NULL,
+  meal VARCHAR(25) NOT NULL,
+  dc_id INTEGER UNIQUE NOT NULL,
+  distribution_channel VARCHAR(30) NOT NULL
+);
+
+--CREATE TABLE market
+CREATE TABLE market (
+  ms_id INTEGER UNIQUE NOT NULL,
+  market_segment VARCHAR(30) NOT NULL
+);
+
+--CREATE TABLE rooms
+CREATE TABLE rooms (
+  room_id INTEGER UNIQUE NOT NULL,
+  room_type VARCHAR(30) NOT NULL
+);
+
+--CREATE TABLE country
+CREATE TABLE country (
+  country_id INTEGER UNIQUE NOT NULL,
+  country VARCHAR(3) NOT NULL
+);
+
+--CREATE TABLE hotel_bookings
+CREATE TABLE hotel_bookings (
+  hotel INTEGER NULL,
+  is_canceled INTEGER NOT NULL,
+  lead_time INTEGER NOT NULL,
+  arrival_date_year INTEGER NOT NULL,
+  arrival_date_month INTEGER NOT NULL,
+  arrival_date_week_number INTEGER NOT NULL,
+  arrival_date_day_of_month INTEGER NOT NULL,
+  stays_in_weekend_nights INTEGER NOT NULL,
+  stays_in_week_nights INTEGER NOT NULL,
+  adults INTEGER NOT NULL,
+  children INTEGER NOT NULL,
+  babies INTEGER NOT NULL,
+  meal INTEGER NOT NULL,
+  country INTEGER NOT NULL,
+  market_segment INTEGER NOT NULL,
+  distribution_channel INTEGER NOT NULL,
+  is_repeated_guest INTEGER NOT NULL,
+  previous_cancellations INTEGER NOT NULL, 
+  previous_bookings_not_canceled INTEGER NOT NULL,
+  reserved_room_type INTEGER NOT NULL,
+  assigned_room_type INTEGER NOT NULL,
+  room_type_fulfilled INTEGER NOT NULL,
+  booking_changes INTEGER NOT NULL,
+  deposit_type INTEGER NOT NULL,
+  agent INTEGER NULL,
+  company INTEGER NULL,
+  days_in_waiting_list INTEGER NOT NULL,
+  customer_type INTEGER NOT NULL,
+  adr FLOAT NOT NULL,
+  required_car_parking_spaces INTEGER NOT NULL,
+  total_of_special_requests INTEGER NOT NULL,
+  reservation_status INTEGER NOT NULL,
+  reservation_status_date DATE NOT NULL,
+  international INTEGER NOT NULL
+);
+

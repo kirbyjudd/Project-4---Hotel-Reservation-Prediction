@@ -1,0 +1,6 @@
+﻿meal_id,meal,dc_id,distribution_channel
+0,Bed and Breakfast,0,Corporate
+1,Full Board,1,Direct
+2,Half Board,2,GDS
+3,Self Cater,3,TA/TO
+4,Undefined,4,Undefined
