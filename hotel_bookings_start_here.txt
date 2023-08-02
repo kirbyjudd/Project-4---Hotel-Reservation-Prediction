@@ -20,7 +20,10 @@
 --6. Open a new query window and execute the following code:
 --   ALTER TABLE hotel_bookings
 --   DROP COLUMN company;
---7. Perform a select statement on each table to validate imports.
+--7. Open a new query window and execute the following code:
+--   ALTER TABLE hotel_bookings
+--   DROP COLUMN reservation_status_date;
+--8. Perform a select statement on each table to validate imports.
 
 
 --Schema for hotel_bookings table and support and lookup tables to support the csv imports
