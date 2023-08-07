@@ -1,5 +1,9 @@
 ### Group 5 Project 4 - Hotel Reservation Cancellation Prediction
 
+### Introduction
+
+The dataset source (Dataset Source: https://www.kaggle.com/datasets/ahsan81/hotel-reservations-classification-dataset) provided hotel reservation information with the intent of trying to predict whether or not a customer is going to cancel a reservation. The reservation data covers a three year time period from Portugal. The source data was modified as described below so that various models could be tested in order to determine if accurate predictions could be made with regards to cancellations.
+
 ### Preprocessing and Data Cleanup
 
 The original dataset was reviewed during preprocessing in order to streamline the data for model development.
