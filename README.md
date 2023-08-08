@@ -68,11 +68,11 @@ As a result of the size of the dataset, the data was stratified. Testing was com
 
 Three models were run against the data:
 
-Logistic Regression = 89%
+Logistic Regression = 79.5%
 
-Random Forest = 85%
+Random Forest = 89%
 
-Decision Tree = 79%
+Decision Tree = 85%
 
 
 In order to evaluate model performance on the test data the following were generated:
