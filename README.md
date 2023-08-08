@@ -60,4 +60,46 @@ Directions to setup hotel_bookings_db (From: hotel_bookings_start_here.txt)
 
 Once the database was established psycopg2 was used to esablish a connection string from the Jupyter Notebook to the local Postgres database.
 
+### Model Development
+
+Data Stratification 
+As a result of the size of the dataset the data was stratified. Testing was complete and validated that our data of interest was 61% and 39% in both the full and stratified data sets.
+
+Three models were run against the data:
+
+Logistic Regression = 89%
+Random Forest = 85%
+Decision Tree = 79%
+
+In order to evaluate model performance on the test data the following were generated:
+
+Confustion Matrix
+Accuracy Score
+Classification Report
+
+### Conclusion and Recomendations
+
+The models are effective in identifying features contributing to cancellations.
+
+Three features most important to predict cancellations:
+   Deposit Type
+   Country of Origin (Domestic vs International)
+   Lead Time of Reservation
+
+Recommendations to Reduce Cancellations:
+   Always charge a deposit
+	Cater to international clients
+	Reduce early booking window
+	Optimize price strategies
+
+### Limitations
+
+1. Dataset from single country “Portugal”: The analysis is based on hotel reservation data from Portugal.  As a result, the findings may not be directly applicable to hotels in other countries with different travel patterns and preferences.
+
+2. Data Age (2015-2017): The data used in the analysis spans from 2015 to 2017, which may not fully capture the current trends and dynamics in the hospitality industry. 
+
+3. Pre-COVID Era: The dataset predates the COVID-19 pandemic, which significantly impacted the travel and hospitality industry. As a result, the predictive models may not accurately account for the post-COVID travel economy and uncertainties. 
+
+
+
 
