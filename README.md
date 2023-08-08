@@ -78,7 +78,9 @@ Decision Tree = 79%
 In order to evaluate model performance on the test data the following were generated:
 
 Confustion Matrix
+
 Accuracy Score
+
 Classification Report
 
 ### Conclusion and Recomendations
@@ -87,14 +89,20 @@ The models are effective in identifying features contributing to cancellations.
 
 Three features most important to predict cancellations:
    Deposit Type
+
    Country of Origin (Domestic vs International)
+
    Lead Time of Reservation
 
 Recommendations to Reduce Cancellations:
    Always charge a deposit
+
 	Cater to international clients
+
 	Reduce early booking window
+
 	Optimize price strategies
+   
 
 ### Limitations
 
