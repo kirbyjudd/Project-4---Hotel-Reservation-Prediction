@@ -88,6 +88,7 @@ Classification Report
 The models are effective in identifying features contributing to cancellations.
 
 Three features most important to predict cancellations:
+
    Deposit Type
 
    Country of Origin (Domestic vs International)
@@ -95,14 +96,15 @@ Three features most important to predict cancellations:
    Lead Time of Reservation
 
 Recommendations to Reduce Cancellations:
-   Always charge a deposit
 
-	Cater to international clients
+Always charge a deposit
 
-	Reduce early booking window
+Cater to international clients
 
-	Optimize price strategies
-   
+Reduce early booking window
+
+Optimize price strategies
+
 
 ### Limitations
 
