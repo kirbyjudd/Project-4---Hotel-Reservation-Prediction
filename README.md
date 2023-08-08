@@ -63,13 +63,17 @@ Once the database was established psycopg2 was used to esablish a connection str
 ### Model Development
 
 Data Stratification 
+
 As a result of the size of the dataset the data was stratified. Testing was complete and validated that our data of interest was 61% and 39% in both the full and stratified data sets.
 
 Three models were run against the data:
 
 Logistic Regression = 89%
+
 Random Forest = 85%
+
 Decision Tree = 79%
+
 
 In order to evaluate model performance on the test data the following were generated:
 
